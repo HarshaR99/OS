@@ -1,3 +1,7 @@
+// Assignment ->
+// Write a C program to simulate disk scheduling algorithm
+// -> LOOK
+
 #include<stdio.h>
 #include<stdlib.h>
 
