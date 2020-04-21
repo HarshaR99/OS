@@ -37,7 +37,7 @@ void des_sort(int arr[200],int n){
 }
 
 int main(){
-int q1[SIZE];int q2[SIZE];int n1=0,n2=0,i,j,temp,seek;
+int q1[SIZE];int q2[SIZE];int n1=0,n2=0,i,j,temp,prev;
 int no_tracks,start_track;
 printf("Enter number of disc locations to visit: ");
 scanf("%d",&no_tracks);
@@ -58,35 +58,26 @@ for(i=1;i<=no_tracks;i++){
 
 des_sort(q2,n2);
 asc_sort(q1,n1);
-seek = start_track;
+prev = start_track;
 
 if(n1!=0){
-    printf("\nDisk head moves from %d to %d with seek %d.",seek,q1[0],q1[0]-seek);
+    printf("\nDisk head moves from %d to %d with seek %d.",prev,q1[0],q1[0]-prev);
 }
 for(i=0;i<n1-1;i++){
-    seek = q1[i];
-    printf("\nDisk head moves from %d to %d with seek %d",q1[i],q1[i+1],q1[i+1]-q1[i]);
+    prev = q1[i];
+    printf("\nDisk head moves from %d to %d with seek %d.",q1[i],q1[i+1],q1[i+1]-q1[i]);
 }
 
 if(n2!=0){
-    printf("\nDisk head moves from %d to %d with seek %d.",seek,q2[0],seek-q2[0]);
-    seek = q2[0];
+    printf("\nDisk head moves from %d to %d with seek %d.",prev,q2[0],prev-q2[0]);
+    prev = q2[0];
 }
 for(i=0;i<n2-1;i++){
-    printf("\nDisk head moves from %d to %d with seek %d",q2[i],q2[i+1],q2[i]-q2[i+1]);
+    printf("\nDisk head moves from %d to %d with seek %d.",q2[i],q2[i+1],q2[i]-q2[i+1]);
 
 }
 return 0;
 }
-
-
-
-
-
-
-
-
-
 
 
 
